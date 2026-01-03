@@ -20,10 +20,13 @@
     .max-w-prose { max-width: 48rem; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 1rem 2rem; border-radius: 0.5rem;
-      font-weight: 600; font-size: 1.125rem;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
       text-decoration: none;
       transition: opacity 0.2s;
+      white-space: nowrap;
     }
     .btn-primary {
       background: linear-gradient(to right, #2563eb, #06b6d4);
@@ -43,10 +46,10 @@
       background: rgba(31, 41, 55, 0.3);
       border: 1px solid #374151;
       border-radius: 1rem;
-      padding: 2rem;
+      padding: 1.5rem;
       backdrop-filter: blur(4px);
     }
-    .section { padding: 4rem 0; }
+    .section { padding: 3rem 0; }
     .section-border { border-top: 1px solid #374151; border-bottom: 1px solid #374151; }
 
     /* Navigation */
@@ -56,104 +59,277 @@
       left: 0;
       right: 0;
       z-index: 50;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #1f2937;
       padding: 0 1rem;
     }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; height: 4rem; max-width: 72rem; margin: 0 auto; }
+    .nav-container { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      height: 3.75rem; 
+      max-width: 72rem; 
+      margin: 0 auto; 
+    }
     .logo { display: flex; align-items: center; gap: 0.5rem; }
     .logo-icon {
-      width: 2.5rem; height: 2.5rem;
+      width: 2.25rem; 
+      height: 2.25rem;
       border-radius: 0.5rem;
       background: linear-gradient(to right, #2563eb, #06b6d4);
       display: flex; align-items: center; justify-content: center;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-link { color: white; text-decoration: none; font-weight: 500; }
+    .nav-links { display: flex; gap: 1.25rem; }
+    .nav-link { 
+      color: white; 
+      text-decoration: none; 
+      font-weight: 500; 
+      font-size: 0.95rem;
+    }
     .nav-link:hover { color: #22d3ee; }
-    .mobile-toggle { display: none; flex-direction: column; gap: 0.25rem; }
-    .bar { width: 1.5rem; height: 2px; background: white; }
+    .mobile-toggle { 
+      display: none; 
+      flex-direction: column; 
+      gap: 0.25rem; 
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .bar { 
+      width: 1.5rem; 
+      height: 2px; 
+      background: white; 
+      border-radius: 1px;
+    }
 
     /* Hero */
-    .hero { padding-top: 5rem; padding-bottom: 4rem; }
-    .hero-content { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
-    @media (min-width: 768px) { .hero-content { grid-template-columns: 1fr 1fr; } }
+    .hero { padding-top: 4.5rem; padding-bottom: 3rem; }
+    .hero-content { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 2rem; 
+      align-items: center; 
+    }
     .badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem;
       background: rgba(31, 41, 55, 0.5);
       padding: 0.5rem 1rem;
       border-radius: 9999px;
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
     }
     .badge-icon { color: #22d3ee; }
     h1 {
-      font-size: 2.25rem; font-weight: 700; line-height: 1.2;
-      margin-bottom: 1.5rem;
+      font-size: 1.875rem; 
+      font-weight: 700; 
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
     }
-    @media (min-width: 768px) { h1 { font-size: 3.75rem; } }
-    .hero-text { font-size: 1.25rem; color: #9ca3af; margin-bottom: 2rem; max-width: 40rem; }
+    .hero-text { 
+      font-size: 1.125rem; 
+      color: #9ca3af; 
+      margin-bottom: 1.5rem; 
+    }
+    .hero-actions { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 0.75rem; 
+    }
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+    @media (min-width: 768px) { 
+      .hero { padding-top: 5rem; padding-bottom: 4rem; }
+      .hero-content { grid-template-columns: 1fr 1fr; }
+      h1 { font-size: 2.25rem; }
+      @media (min-width: 1024px) { h1 { font-size: 3rem; } }
+      @media (min-width: 1280px) { h1 { font-size: 3.75rem; } }
+      .hero-actions .btn { width: auto; }
+    }
 
     /* Program grid */
-    .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
-    .program-card { border-radius: 1.5rem; overflow: hidden; }
+    .grid-3 { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 1.5rem; 
+    }
+    @media (min-width: 768px) { 
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) { 
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    .program-card { 
+      border-radius: 1.25rem; 
+      overflow: hidden; 
+    }
     .program-top { padding: 0.25rem; }
-    .program-content { background: black; border-radius: 1rem; padding: 2rem; }
-    .program-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .program-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .program-meta { display: flex; justify-content: space-between; color: #9ca3af; font-size: 0.875rem; margin-bottom: 1.5rem; }
-    .program-list { list-style: none; margin-bottom: 1.5rem; }
-    .program-list li { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
-    .check-icon { color: #22d3ee; flex-shrink: 0; margin-top: 0.25rem; }
+    .program-content { 
+      background: black; 
+      border-radius: 1rem; 
+      padding: 1.5rem; 
+    }
+    .program-icon { 
+      font-size: 2rem; 
+      margin-bottom: 0.75rem; 
+    }
+    .program-title { 
+      font-size: 1.25rem; 
+      font-weight: 700; 
+      margin-bottom: 0.5rem; 
+    }
+    .program-meta { 
+      display: flex; 
+      justify-content: space-between; 
+      color: #9ca3af; 
+      font-size: 0.8125rem; 
+      margin-bottom: 1rem; 
+    }
+    .program-list { 
+      list-style: none; 
+      margin-bottom: 1.25rem; 
+      font-size: 0.95rem;
+    }
+    .program-list li { 
+      display: flex; 
+      align-items: flex-start; 
+      gap: 0.5rem; 
+      margin-bottom: 0.5rem; 
+    }
+    .check-icon { 
+      color: #22d3ee; 
+      flex-shrink: 0; 
+      margin-top: 0.25rem; 
+      flex-shrink: 0;
+    }
 
     /* Testimonial */
     .testimonial-box { 
       background: rgba(31, 41, 55, 0.3);
       border: 1px solid #374151;
-      border-radius: 1.5rem;
-      padding: 2rem;
-      max-width: 64rem;
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      max-width: 100%;
       margin: 0 auto;
     }
-    .testimonial-text { font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; }
-    .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+    .testimonial-text { 
+      font-size: 1.25rem; 
+      font-style: italic; 
+      margin-bottom: 1.5rem; 
+      line-height: 1.4;
+    }
+    .testimonial-author { 
+      display: flex; 
+      align-items: center; 
+      gap: 0.75rem; 
+    }
     .author-avatar {
-      width: 4rem; height: 4rem;
+      width: 3.25rem; 
+      height: 3.25rem;
       border-radius: 9999px;
       background: linear-gradient(to right, #2563eb, #06b6d4);
-      display: flex; align-items: center; justify-content: center;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
-    .author-info h3 { font-weight: 600; font-size: 1.125rem; }
-    .author-info p { color: #22d3ee; font-size: 0.875rem; }
-    .author-year { color: #9ca3af; font-size: 0.875rem; }
+    .author-info h3 { 
+      font-weight: 600; 
+      font-size: 1rem; 
+    }
+    .author-info p { 
+      color: #22d3ee; 
+      font-size: 0.8125rem; 
+    }
+    .author-year { 
+      color: #9ca3af; 
+      font-size: 0.8125rem; 
+    }
 
     /* Dots */
-    .dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 2rem; }
-    .dot { width: 0.75rem; height: 0.75rem; border-radius: 50%; background: #374151; }
-    .dot.active { background: #22d3ee; }
+    .dots { 
+      display: flex; 
+      justify-content: center; 
+      gap: 0.5rem; 
+      margin-top: 1.5rem; 
+    }
+    .dot { 
+      width: 0.625rem; 
+      height: 0.625rem; 
+      border-radius: 50%; 
+      background: #374151; 
+    }
+    .dot.active { 
+      background: #22d3ee; 
+    }
 
     /* Footer */
-    footer { border-top: 1px solid #1f2937; padding: 3rem 0 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
-    .footer-links li { margin-bottom: 0.5rem; }
-    .footer-links a { color: #9ca3af; text-decoration: none; }
-    .footer-links a:hover { color: #22d3ee; }
+    footer { 
+      border-top: 1px solid #1f2937; 
+      padding: 2.5rem 0 2rem; 
+    }
+    .footer-grid { 
+      display: grid; 
+      grid-template-columns: 1fr; 
+      gap: 2rem; 
+    }
+    @media (min-width: 768px) { 
+      .footer-grid { 
+        grid-template-columns: 2fr 1fr 1fr; 
+      } 
+    }
+    .footer-links li { 
+      margin-bottom: 0.5rem; 
+    }
+    .footer-links a { 
+      color: #9ca3af; 
+      text-decoration: none; 
+      font-size: 0.95rem;
+    }
+    .footer-links a:hover { 
+      color: #22d3ee; 
+    }
 
     /* Mobile menu */
-    #mobile-menu { display: none; padding-top: 1rem; border-top: 1px solid #1f2937; }
-    #mobile-menu.active { display: block; }
+    #mobile-menu { 
+      display: none; 
+      padding: 1rem 0 0.5rem;
+      border-top: 1px solid #1f2937;
+    }
+    #mobile-menu.active { 
+      display: block; 
+    }
 
     /* Responsive */
     @media (max-width: 767px) {
-      .nav-links, .desktop-only { display: none !important; }
-      .mobile-toggle { display: flex; }
-      .hero { padding-top: 4rem; }
+      .nav-links, .desktop-only { 
+        display: none !important; 
+      }
+      .mobile-toggle { 
+        display: flex; 
+      }
+      .hero { 
+        padding-top: 4rem; 
+      }
+      /* Stack hero buttons vertically on mobile */
+      .hero-actions {
+        flex-direction: column;
+      }
+      /* Ensure sections don’t feel cramped */
+      .section {
+        padding: 2.5rem 0;
+      }
+      h2 {
+        font-size: 1.875rem;
+      }
+      .card, .program-content, .testimonial-box {
+        padding: 1.25rem;
+      }
     }
   </style>
 </head>
@@ -163,7 +339,7 @@
     <div class="nav-container">
       <div class="logo">
         <div class="logo-icon">BT</div>
-        <span class="gradient-text" style="font-size: 1.25rem; font-weight: 700;">Bravo Trading Academy</span>
+        <span class="gradient-text" style="font-size: 1.125rem; font-weight: 700;">Bravo Trading Academy</span>
       </div>
       
       <div class="nav-links">
@@ -182,7 +358,7 @@
 
     <div id="mobile-menu">
       <div class="container">
-        <div class="nav-links" style="flex-direction: column; gap: 1rem;">
+        <div class="nav-links" style="flex-direction: column; gap: 1.25rem; padding-top: 0.5rem;">
           <a href="#home" class="nav-link">Home</a>
           <a href="#programs" class="nav-link">Programs</a>
           <a href="#research" class="nav-link">Research</a>
@@ -198,7 +374,7 @@
       <div class="hero-content">
         <div>
           <div class="badge">
-            <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.5 21v-9.5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v9.5"></path><path d="M2 12h18a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1z"></path><path d="M2 6h10a1 1 0 0 1 1 1v9"></path></svg>
+            <svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.5 21v-9.5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v9.5"></path><path d="M2 12h18a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1z"></path><path d="M2 6h10a1 1 0 0 1 1 1v9"></path></svg>
             Trading Education Academy
           </div>
           <h1>
@@ -209,10 +385,10 @@
             Educational resources focused on market analysis and risk management. 
             Founded by L. Samual, combining technical systems expertise with trading education.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <div class="hero-actions">
             <a href="#programs" class="btn btn-primary">View Programs</a>
             <a href="#research" class="btn btn-secondary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
               Research Publications
@@ -223,27 +399,27 @@
           <div style="background: linear-gradient(to bottom right, #1f2937, #111827); border-radius: 1rem; padding: 0.25rem;">
             <div style="background: black; border-radius: 0.875rem; overflow: hidden;">
               <div style="aspect-ratio: 16/9; background: linear-gradient(to right, rgba(37, 99, 235, 0.2), rgba(6, 182, 212, 0.2)); display: flex; align-items: center; justify-content: center;">
-                <div style="text-align: center; padding: 1rem;">
-                  <div class="badge" style="margin-bottom: 1rem;">
-                    <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12M2 7h20v5H2V7ZM12 22V7M6 7V2h6v5M12 7V2h6v5"></path></svg>
+                <div style="text-align: center; padding: 0.75rem;">
+                  <div class="badge" style="margin-bottom: 0.75rem; font-size: 0.8125rem;">
+                    <svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12M2 7h20v5H2V7ZM12 22V7M6 7V2h6v5M12 7V2h6v5"></path></svg>
                     Risk Management Framework
                   </div>
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 24rem; margin: 0 auto;">
-                    <div style="background: rgba(31, 41, 55, 0.5); padding: 1rem; border-radius: 0.5rem;">
-                      <div style="height: 0.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
-                      <span style="font-size: 0.875rem;">Position Sizing</span>
+                  <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 22rem; margin: 0 auto;">
+                    <div style="background: rgba(31, 41, 55, 0.5); padding: 0.75rem; border-radius: 0.5rem;">
+                      <div style="height: 0.4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
+                      <span style="font-size: 0.8125rem;">Position Sizing</span>
                     </div>
-                    <div style="background: rgba(31, 41, 55, 0.5); padding: 1rem; border-radius: 0.5rem;">
-                      <div style="height: 0.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
-                      <span style="font-size: 0.875rem;">Stop Mechanisms</span>
+                    <div style="background: rgba(31, 41, 55, 0.5); padding: 0.75rem; border-radius: 0.5rem;">
+                      <div style="height: 0.4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
+                      <span style="font-size: 0.8125rem;">Stop Mechanisms</span>
                     </div>
-                    <div style="background: rgba(31, 41, 55, 0.5); padding: 1rem; border-radius: 0.5rem;">
-                      <div style="height: 0.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
-                      <span style="font-size: 0.875rem;">Portfolio Allocation</span>
+                    <div style="background: rgba(31, 41, 55, 0.5); padding: 0.75rem; border-radius: 0.5rem;">
+                      <div style="height: 0.4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
+                      <span style="font-size: 0.8125rem;">Portfolio Allocation</span>
                     </div>
-                    <div style="background: rgba(31, 41, 55, 0.5); padding: 1rem; border-radius: 0.5rem;">
-                      <div style="height: 0.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
-                      <span style="font-size: 0.875rem;">Drawdown Control</span>
+                    <div style="background: rgba(31, 41, 55, 0.5); padding: 0.75rem; border-radius: 0.5rem;">
+                      <div style="height: 0.4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 9999px; margin-bottom: 0.5rem;"></div>
+                      <span style="font-size: 0.8125rem;">Drawdown Control</span>
                     </div>
                   </div>
                 </div>
@@ -258,32 +434,32 @@
   <!-- Approach -->
   <section class="section section-border">
     <div class="container">
-      <div style="text-align: center; max-width: 48rem; margin: 0 auto 4rem;">
-        <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;">Educational Approach</h2>
-        <p style="font-size: 1.25rem; color: #9ca3af;">Our methodology emphasizes objective analysis, process consistency, and capital preservation.</p>
+      <div style="text-align: center; max-width: 48rem; margin: 0 auto 3rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Educational Approach</h2>
+        <p style="font-size: 1.125rem; color: #9ca3af;">Our methodology emphasizes objective analysis, process consistency, and capital preservation.</p>
       </div>
 
       <div class="grid-3">
         <div class="card">
-          <div style="width: 4rem; height: 4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          <div style="width: 3.5rem; height: 3.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Technical Analysis</h3>
-          <p style="color: #9ca3af;">Structured approach to price action and market structure</p>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Technical Analysis</h3>
+          <p style="color: #9ca3af; font-size: 0.95rem;">Structured approach to price action and market structure</p>
         </div>
         <div class="card">
-          <div style="width: 4rem; height: 4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <div style="width: 3.5rem; height: 3.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Risk Management</h3>
-          <p style="color: #9ca3af;">Systematic capital preservation protocols</p>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Risk Management</h3>
+          <p style="color: #9ca3af; font-size: 0.95rem;">Systematic capital preservation protocols</p>
         </div>
         <div class="card">
-          <div style="width: 4rem; height: 4rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20h.01M4.93 17.07A9.95 9.95 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10c0 2-.73 3.84-1.97 5.52"></path></svg>
+          <div style="width: 3.5rem; height: 3.5rem; background: linear-gradient(to right, #2563eb, #06b6d4); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 20h.01M4.93 17.07A9.95 9.95 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10c0 2-.73 3.84-1.97 5.52"></path></svg>
           </div>
-          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Decision Frameworks</h3>
-          <p style="color: #9ca3af;">Objective criteria for trade evaluation and execution</p>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Decision Frameworks</h3>
+          <p style="color: #9ca3af; font-size: 0.95rem;">Objective criteria for trade evaluation and execution</p>
         </div>
       </div>
     </div>
@@ -292,13 +468,13 @@
   <!-- Programs -->
   <section id="programs" class="section">
     <div class="container">
-      <div style="text-align: center; max-width: 48rem; margin: 0 auto 4rem;">
-        <div class="badge" style="margin-bottom: 1.5rem;">
-          <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+      <div style="text-align: center; max-width: 48rem; margin: 0 auto 3rem;">
+        <div class="badge" style="margin-bottom: 1.25rem;">
+          <svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
           Structured Learning Paths
         </div>
-        <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;">Educational Programs</h2>
-        <p style="font-size: 1.25rem; color: #9ca3af;">Curriculum designed for progressive skill development</p>
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Educational Programs</h2>
+        <p style="font-size: 1.125rem; color: #9ca3af;">Curriculum designed for progressive skill development</p>
       </div>
 
       <div class="grid-3">
@@ -312,17 +488,17 @@
                 <span>8 Weeks</span>
               </div>
               <ul class="program-list">
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Market Mechanics</li>
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic Chart Analysis</li>
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Risk Parameters</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Market Mechanics</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic Chart Analysis</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Risk Parameters</li>
               </ul>
-              <a href="#contact" class="btn btn-secondary" style="width: 100%;">Request Information</a>
+              <a href="#contact" class="btn btn-secondary">Request Information</a>
             </div>
           </div>
         </div>
 
         <div class="program-card" style="position: relative;">
-          <div style="position: absolute; top: 0; right: 0; background: linear-gradient(to right, #22d3ee, #2563eb); color: black; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 1rem; border-bottom-left-radius: 0.5rem;">INTERMEDIATE</div>
+          <div style="position: absolute; top: 0; right: 0; background: linear-gradient(to right, #22d3ee, #2563eb); color: black; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.75rem; border-bottom-left-radius: 0.375rem;">INTERMEDIATE</div>
           <div class="program-top" style="background: linear-gradient(to right, #22d3ee, #2563eb);">
             <div class="program-content">
               <div class="program-icon">⚙️</div>
@@ -332,11 +508,11 @@
                 <span>12 Weeks</span>
               </div>
               <ul class="program-list">
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-Timeframe Analysis</li>
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Order Flow Interpretation</li>
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Position Sizing</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-Timeframe Analysis</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Order Flow Interpretation</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Position Sizing</li>
               </ul>
-              <a href="#contact" class="btn btn-primary" style="width: 100%;">Request Information</a>
+              <a href="#contact" class="btn btn-primary">Request Information</a>
             </div>
           </div>
         </div>
@@ -351,11 +527,11 @@
                 <span>16 Weeks</span>
               </div>
               <ul class="program-list">
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Strategy Development</li>
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Backtesting Methodology</li>
-                <li><svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Live Implementation</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Strategy Development</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Backtesting Methodology</li>
+                <li><svg class="check-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Live Implementation</li>
               </ul>
-              <a href="#contact" class="btn btn-secondary" style="width: 100%;">Request Information</a>
+              <a href="#contact" class="btn btn-secondary">Request Information</a>
             </div>
           </div>
         </div>
@@ -366,9 +542,9 @@
   <!-- Testimonials -->
   <section class="section section-border">
     <div class="container">
-      <div style="text-align: center; max-width: 48rem; margin: 0 auto 4rem;">
-        <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem;">Participant Feedback</h2>
-        <p style="font-size: 1.25rem; color: #9ca3af;">Experiences from program participants</p>
+      <div style="text-align: center; max-width: 48rem; margin: 0 auto 3rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Participant Feedback</h2>
+        <p style="font-size: 1.125rem; color: #9ca3af;">Experiences from program participants</p>
       </div>
 
       <div class="testimonial-box">
@@ -380,7 +556,7 @@
           <div class="author-info">
             <h3 id="testimonial-name">Miguel R.</h3>
             <p id="testimonial-role">Former retail trader</p>
-            <div id="testimonial-year" class="author-year">2023</div>
+            <div id="testimonial-year" class="author-year">2025</div>
           </div>
         </div>
       </div>
@@ -397,21 +573,21 @@
   <section id="research" class="section">
     <div class="container">
       <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
-        <div style="background: linear-gradient(to right, rgba(37, 99, 235, 0.05), rgba(6, 182, 212, 0.05)); border-radius: 1.5rem; padding: 0.25rem; margin-bottom: 3rem;">
-          <div style="background: rgba(0, 0, 0, 0.8); border-radius: 1.5rem; padding: 3rem;">
-            <div class="badge" style="margin-bottom: 1.5rem;">
-              <svg class="badge-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        <div style="background: linear-gradient(to right, rgba(37, 99, 235, 0.05), rgba(6, 182, 212, 0.05)); border-radius: 1.25rem; padding: 0.25rem; margin-bottom: 2.5rem;">
+          <div style="background: rgba(0, 0, 0, 0.8); border-radius: 1.25rem; padding: 2.5rem;">
+            <div class="badge" style="margin-bottom: 1.25rem;">
+              <svg class="badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
               Research Publications
             </div>
-            <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem;">Educational Research</h2>
-            <p style="font-size: 1.25rem; color: #9ca3af; margin-bottom: 2rem;">Ongoing work on methodology and frameworks</p>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 32rem; margin: 0 auto;">
-              <div style="background: rgba(31, 41, 55, 0.3); padding: 1rem; border-radius: 0.75rem; text-align: left;">
-                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Position Sizing Frameworks</h3>
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.25rem;">Educational Research</h2>
+            <p style="font-size: 1.125rem; color: #9ca3af; margin-bottom: 1.5rem;">Ongoing work on methodology and frameworks</p>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 30rem; margin: 0 auto;">
+              <div style="background: rgba(31, 41, 55, 0.3); padding: 0.875rem; border-radius: 0.75rem; text-align: left;">
+                <h3 style="font-weight: 600; margin-bottom: 0.375rem; font-size: 1.125rem;">Position Sizing Frameworks</h3>
                 <p style="color: #9ca3af; font-size: 0.875rem;">Comparative analysis of risk management approaches</p>
               </div>
-              <div style="background: rgba(31, 41, 55, 0.3); padding: 1rem; border-radius: 0.75rem; text-align: left;">
-                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Backtesting Methodology</h3>
+              <div style="background: rgba(31, 41, 55, 0.3); padding: 0.875rem; border-radius: 0.75rem; text-align: left;">
+                <h3 style="font-weight: 600; margin-bottom: 0.375rem; font-size: 1.125rem;">Backtesting Methodology</h3>
                 <p style="color: #9ca3af; font-size: 0.875rem;">Guidelines for statistically valid testing procedures</p>
               </div>
             </div>
@@ -425,17 +601,17 @@
   <section id="contact" class="section">
     <div class="container">
       <div style="max-width: 48rem; margin: 0 auto; text-align: center;">
-        <div style="background: linear-gradient(to right, rgba(37, 99, 235, 0.05), rgba(6, 182, 212, 0.05)); border-radius: 1.5rem; padding: 0.25rem;">
-          <div style="background: rgba(0, 0, 0, 0.8); border-radius: 1.5rem; padding: 3rem;">
-            <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem;">Contact Information</h2>
-            <p style="font-size: 1.25rem; color: #9ca3af; margin-bottom: 2rem;">For program inquiries and research collaboration</p>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; max-width: 32rem; margin: 0 auto;">
-              <div style="text-align: left; padding: 1rem;">
-                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">General Inquiries</h3>
+        <div style="background: linear-gradient(to right, rgba(37, 99, 235, 0.05), rgba(6, 182, 212, 0.05)); border-radius: 1.25rem; padding: 0.25rem;">
+          <div style="background: rgba(0, 0, 0, 0.8); border-radius: 1.25rem; padding: 2.5rem;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.25rem;">Contact Information</h2>
+            <p style="font-size: 1.125rem; color: #9ca3af; margin-bottom: 1.5rem;">For program inquiries and research collaboration</p>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 30rem; margin: 0 auto;">
+              <div style="text-align: left; padding: 0.75rem;">
+                <h3 style="font-weight: 600; margin-bottom: 0.375rem; font-size: 1.125rem;">General Inquiries</h3>
                 <p style="color: #9ca3af;">bravotradingacademy@outlook.com</p>
               </div>
-              <div style="text-align: left; padding: 1rem;">
-                <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Research Collaboration</h3>
+              <div style="text-align: left; padding: 0.75rem;">
+                <h3 style="font-weight: 600; margin-bottom: 0.375rem; font-size: 1.125rem;">Research Collaboration</h3>
                 <p style="color: #9ca3af;">bravotradingacademy@outlook.com</p>
               </div>
             </div>
@@ -452,14 +628,14 @@
         <div>
           <div class="logo" style="margin-bottom: 1rem;">
             <div class="logo-icon">BT</div>
-            <span class="gradient-text" style="font-size: 1.25rem; font-weight: 700;">Bravo Trading Academy</span>
+            <span class="gradient-text" style="font-size: 1.125rem; font-weight: 700;">Bravo Trading Academy</span>
           </div>
-          <p style="color: #9ca3af; max-width: 32rem;">
+          <p style="color: #9ca3af; max-width: 32rem; font-size: 0.95rem;">
             Empowering individuals with practical knowledge in trading methodology and risk management through structured educational resources.
           </p>
         </div>
         <div>
-          <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Programs</h3>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem;">Programs</h3>
           <ul class="footer-links">
             <li><a href="#programs">Fundamentals</a></li>
             <li><a href="#programs">Intermediate</a></li>
@@ -467,7 +643,7 @@
           </ul>
         </div>
         <div>
-          <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 1rem;">Resources</h3>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem;">Resources</h3>
           <ul class="footer-links">
             <li><a href="#research">Research</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -475,9 +651,9 @@
           </ul>
         </div>
       </div>
-      <div style="border-top: 1px solid #1f2937; margin-top: 2rem; padding-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <div style="border-top: 1px solid #1f2937; margin-top: 2rem; padding-top: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; font-size: 0.875rem;">
         <p style="color: #6b7280;">© 2026 Bravo Trading Academy. All rights reserved.</p>
-        <div style="display: flex; gap: 1.5rem;">
+        <div style="display: flex; gap: 1.25rem;">
           <a href="#" style="color: #6b7280; text-decoration: none;">Privacy Policy</a>
           <a href="#" style="color: #6b7280; text-decoration: none;">Terms of Service</a>
         </div>
@@ -552,4 +728,3 @@
   </script>
 </body>
 </html>
-
